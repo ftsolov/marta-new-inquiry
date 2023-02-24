@@ -1,8 +1,12 @@
-import React from 'react';
+import React from "react";
 
-const Question = ({question}) => {
+const Question = ({ question }) => {
   return (
-    <h1 className={'text-2xl text-navy font-semibold mb-6'}>
+    <h1
+      className={"text-2xl hype text-navy font-semibold mb-6"}
+      lang={"de"}
+      style={{ hyphens: "auto" }}
+    >
       {question}
     </h1>
   );
