@@ -11,7 +11,7 @@ const SelectInput = ({
     <div
       className={`w-full transition duration-100 p-6 border border-2 active:scale-[.98] border-border text-lg text-navy font-normal bg-white rounded-md ${
         selected
-          ? "border-primary text-[#5B68EC] bg-[#FAFBFF] font-medium"
+          ? "border-primary text-indigo-500 bg-[#FAFBFF] font-medium"
           : "null"
       }`}
       onClick={handleSelectAnswer}

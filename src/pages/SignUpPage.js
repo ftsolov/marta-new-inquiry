@@ -28,6 +28,7 @@ const SignUpPage = () => {
               label={"Name"}
               setStateFunction={setSignUpInfo}
               stateValue={signUpInfo}
+              autoFocus={false}
               inputPlaceholder={"Vorname"}
               id={"firstName"}
             />
@@ -35,6 +36,7 @@ const SignUpPage = () => {
               value={signUpInfo.lastName}
               setStateFunction={setSignUpInfo}
               stateValue={signUpInfo}
+              autoFocus={false}
               inputPlaceholder={"Nachname"}
               id={"lastName"}
             />
@@ -43,6 +45,7 @@ const SignUpPage = () => {
             value={signUpInfo.email}
             type={"email"}
             label={"Email"}
+            autoFocus={false}
             inputPlaceholder={"example@domain.de"}
             setStateFunction={setSignUpInfo}
             stateValue={signUpInfo}
@@ -53,11 +56,13 @@ const SignUpPage = () => {
             label={"Phone number"}
             setStateFunction={setSignUpInfo}
             stateValue={signUpInfo}
+            autoFocus={false}
             id={"phoneNumber"}
           />
           <TextInput
             value={signUpInfo.password}
             type={"password"}
+            autoFocus={false}
             label={"Password"}
             setStateFunction={setSignUpInfo}
             stateValue={signUpInfo}

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Lottie from "react-lottie";
 import animationData from "../lotties/inquiryAnimation.json";
 
@@ -6,11 +6,13 @@ const LoadingPage = ({ setCurrentQuestion }) => {
   useEffect(() => {
     setTimeout(() => {
       setCurrentQuestion(13);
-    }, 8000);
+    }, 8500);
   }, []);
 
+  const animationRef = useRef(null);
+
   return (
-    <div className={"w-full h-screen flex items-center justify-center"}>
+    <div className={"w-full flex items-center justify-center pt-40"}>
       <Lottie
         options={{
           loop: false,
@@ -22,7 +24,8 @@ const LoadingPage = ({ setCurrentQuestion }) => {
           },
         }}
         height={400}
-        width={400}
+        width={300}
+        ref={animationRef}
       />
     </div>
   );

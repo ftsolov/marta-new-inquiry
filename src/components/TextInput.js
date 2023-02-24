@@ -7,21 +7,22 @@ const TextInput = ({
   stateValue,
   value,
   id,
-  type
+  autoFocus,
+  type,
 }) => {
   const handleInputChange = (e) => {
     setStateFunction({ ...stateValue, [id]: e.target.value });
   };
 
   return (
-    <div className={'w-full'}>
+    <div className={"w-full"}>
       <label htmlFor={id} className={"text-lg text-navy font-medium"}>
         {label}
       </label>
       <input
         type={type || "text"}
         id={id}
-        autoFocus
+        autoFocus={autoFocus}
         placeholder={inputPlaceholder}
         onChange={handleInputChange}
         value={value}
