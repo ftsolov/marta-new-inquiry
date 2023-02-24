@@ -10,6 +10,15 @@ const SignUpPage = () => {
     password: "",
   });
 
+  let condition1 = "hey";
+  let condition2 = false;
+
+  if (condition1 !== undefined) {
+    console.log("runs")
+  } else {
+    console.log("does not run")
+  }
+
   return (
     <form>
       <img src="/preview.jpg" alt="" className={"w-full -mb-8"} />
@@ -68,19 +77,22 @@ const SignUpPage = () => {
             stateValue={signUpInfo}
             id={"password"}
           />
-          <label htmlFor="consent" className={"flex gap-2 items-start"}>
+          <div className={'flex flex-row items-start'}>
             <input
               type="checkbox"
               id={"consent"}
-              className={"h-4 w-4 bg-indigo-500"}
+              className="w-5 h-5 text-primary-400 bg-gray-100 mt-1 border-gray-300 rounded focus:ring-primary-400 focus:ring-2"
             />
-            I hereby consent (represented by my court-appointed carer if I am
-            mentally impaired) to marta processing my personal data. Further
-            information on data protection is available at link.
-          </label>
+            <label htmlFor="consent" className={"flex gap-2 items-start ml-2"}>
+              I hereby consent (represented by my court-appointed carer if I am
+              mentally impaired) to marta processing my personal data. Further
+              information on data protection is available at link.
+            </label>
+          </div>
+
           <button
             className={
-              "w-full text-center font-medium bg-primary py-4 rounded-md text-xl disabled:bg-primary/60 text-white transition"
+              "w-full text-center font-medium bg-primary-400 py-4 rounded-md text-xl disabled:bg-primary/60 text-white transition"
             }
           >
             Continue

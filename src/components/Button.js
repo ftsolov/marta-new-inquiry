@@ -13,7 +13,7 @@ const Button = ({ setCurrentQuestion, disabled }) => {
     >
       <button
         className={
-          "w-full text-center font-medium bg-primary py-4 rounded-md text-xl disabled:bg-primary/60 text-white transition"
+          "w-full text-center font-medium bg-primary-400 py-4 rounded-md text-xl disabled:bg-primary-400/60 text-white transition"
         }
         onClick={handleButtonClick}
         disabled={disabled}
