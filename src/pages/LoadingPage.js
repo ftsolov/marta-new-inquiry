@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import animationData from "../lotties/inquiryAnimation.json";
 
 const LoadingPage = ({ setCurrentQuestion }) => {
@@ -17,8 +17,6 @@ const LoadingPage = ({ setCurrentQuestion }) => {
         options={{
           loop: false,
           autoplay: true,
-          animationData: animationData,
-          imageAssetsFolder: "./images",
           rendererSettings: {
             preserveAspectRatio: "xMidYMid slice",
           },
@@ -26,6 +24,7 @@ const LoadingPage = ({ setCurrentQuestion }) => {
         height={400}
         width={300}
         ref={animationRef}
+        animationData={animationData}
       />
     </div>
   );
