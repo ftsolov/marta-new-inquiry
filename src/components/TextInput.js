@@ -20,7 +20,7 @@ const TextInput = ({
         {label}
       </label>
       <input
-        type={type || "text"}
+        type={type ?? "text"}
         id={id}
         autoFocus={autoFocus}
         placeholder={inputPlaceholder}

@@ -8,7 +8,7 @@ const Button = ({ setCurrentQuestion, disabled }) => {
   return (
     <div
       className={
-        "w-full flex items-center p-4 absolute bottom-0 left-0 right-0 border-t"
+        "w-full flex items-center p-4 fixed bottom-0 left-0 right-0 border-t"
       }
     >
       <button

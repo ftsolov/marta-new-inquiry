@@ -12,7 +12,7 @@ const LoadingPage = ({ setCurrentQuestion }) => {
   const animationRef = useRef(null);
 
   return (
-    <div className={"w-full flex items-center justify-center pt-40"}>
+    <div className={"w-full flex items-center justify-center pt-32"}>
       <Lottie
         options={{
           loop: false,
@@ -21,9 +21,10 @@ const LoadingPage = ({ setCurrentQuestion }) => {
             preserveAspectRatio: "xMidYMid slice",
           },
         }}
-        height={400}
-        width={300}
+        width={250}
+        height={500}
         ref={animationRef}
+        className={"max-w-sm"}
         animationData={animationData}
       />
     </div>
