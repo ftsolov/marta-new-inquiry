@@ -5,19 +5,27 @@ const SignUpPage = () => {
   const [signUpInfo, setSignUpInfo] = useState({
     firstName: "",
     lastName: "",
+    gender: "",
     email: "",
     phoneNumber: "",
     password: "",
   });
 
-  let condition1 = "hey";
-  let condition2 = false;
-
-  if (condition1 !== undefined) {
-    console.log("runs")
-  } else {
-    console.log("does not run")
-  }
+  const handleFirstNameBlur = async () => {
+    await fetch(`https://api.genderize.io/?name=${signUpInfo.firstName}`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) =>
+        setSignUpInfo({
+          ...signUpInfo,
+          gender: data.gender,
+        })
+      );
+  };
 
   return (
     <form>
@@ -35,6 +43,7 @@ const SignUpPage = () => {
             <TextInput
               value={signUpInfo.firstName}
               label={"Name"}
+              onBlur={handleFirstNameBlur}
               setStateFunction={setSignUpInfo}
               stateValue={signUpInfo}
               autoFocus={false}
@@ -60,6 +69,26 @@ const SignUpPage = () => {
             stateValue={signUpInfo}
             id={"email"}
           />
+          <label className={"text-lg text-navy font-medium"}>Gender</label>
+          <div className={"w-full flex flex-row gap-x-2"}>
+            <div
+              className={
+                `px-4 py-3 transition hover:cursor-pointer w-full rounded-md text-lg focus:outline-primary text-navy/80 mt-1 ${signUpInfo.gender === 'male' ? "bg-primary-400/10 border-primary-400/80 border-2 text-primary-600" : "bg-border/30 border-transparent border-2"}`
+              }
+              onClick={() => setSignUpInfo({...signUpInfo, gender: "male"})}
+            >
+              Male
+            </div>
+            <div
+              className={
+                `px-4 py-3 transition hover:cursor-pointer w-full rounded-md te hover:cursor-pointer text-lg focus:outline-primary text-navy/80 mt-1 ${signUpInfo.gender === 'female' ? "bg-primary-400/10 border-primary-400/80 border-2 text-primary-600" : "bg-border/30 border-transparent border-2"}`
+              }
+              onClick={() => setSignUpInfo({...signUpInfo, gender: "female"})}
+            >
+              Female
+            </div>
+          </div>
+
           <TextInput
             value={signUpInfo.phoneNumber}
             label={"Phone number"}
@@ -77,7 +106,7 @@ const SignUpPage = () => {
             stateValue={signUpInfo}
             id={"password"}
           />
-          <div className={'flex flex-row items-start'}>
+          <div className={"flex flex-row items-start"}>
             <input
               type="checkbox"
               id={"consent"}

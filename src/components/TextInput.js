@@ -4,6 +4,7 @@ const TextInput = ({
   label,
   inputPlaceholder,
   setStateFunction,
+  onBlur,
   stateValue,
   value,
   id,
@@ -26,6 +27,7 @@ const TextInput = ({
         placeholder={inputPlaceholder}
         onChange={handleInputChange}
         value={value}
+        onBlur={onBlur}
         className={
           "px-4 py-3 w-full border-border border-2 rounded-md text-lg focus:outline-primary text-navy/80 mt-1"
         }
