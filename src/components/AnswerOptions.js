@@ -17,7 +17,7 @@ const AnswerOptions = ({
     setTimeout(() => {
       setSelectedAnswer(null);
       setCurrentQuestion(currentQuestion + 1);
-    }, 500);
+    }, 300);
   };
 
   return (

@@ -3,6 +3,7 @@ import Question from "./Question";
 import AnswerOptions from "./AnswerOptions";
 import StatusBar from "./StatusBar";
 import Button from "./Button";
+import TrustElements from "./TrustElements";
 
 const wizardData = [
   {
@@ -111,6 +112,7 @@ const WizardBody = ({
         setCurrentQuestion={setCurrentQuestion}
         currentQuestion={currentQuestion}
       />
+      {currentQuestion === 1 && <TrustElements />}
       {currentQuestion === 11 && (
         <Button
           disabled={userAnswers.postcode.length < 5}

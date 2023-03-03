@@ -69,23 +69,31 @@ const SignUpPage = () => {
             stateValue={signUpInfo}
             id={"email"}
           />
-          <label className={"text-lg text-navy font-medium"}>Gender</label>
-          <div className={"w-full flex flex-row gap-x-2"}>
-            <div
-              className={
-                `px-4 py-3 transition hover:cursor-pointer w-full rounded-md text-lg focus:outline-primary text-navy/80 mt-1 ${signUpInfo.gender === 'male' ? "bg-primary-400/10 border-primary-400/80 border-2 text-primary-600" : "bg-border/30 border-transparent border-2"}`
-              }
-              onClick={() => setSignUpInfo({...signUpInfo, gender: "male"})}
-            >
-              Male
-            </div>
-            <div
-              className={
-                `px-4 py-3 transition hover:cursor-pointer w-full rounded-md te hover:cursor-pointer text-lg focus:outline-primary text-navy/80 mt-1 ${signUpInfo.gender === 'female' ? "bg-primary-400/10 border-primary-400/80 border-2 text-primary-600" : "bg-border/30 border-transparent border-2"}`
-              }
-              onClick={() => setSignUpInfo({...signUpInfo, gender: "female"})}
-            >
-              Female
+          <div>
+            <label className={"text-lg text-navy font-medium"}>Gender</label>
+            <div className={"w-full flex flex-row gap-x-2"}>
+              <div
+                className={`px-4 py-3 transition hover:cursor-pointer w-full rounded-md text-lg focus:outline-primary text-navy/80 mt-1 ${
+                  signUpInfo.gender === "male"
+                    ? "bg-primary-400/10 border-primary-400/80 border-2 text-primary-600"
+                    : "bg-border/30 border-transparent border-2"
+                }`}
+                onClick={() => setSignUpInfo({ ...signUpInfo, gender: "male" })}
+              >
+                Male
+              </div>
+              <div
+                className={`px-4 py-3 transition hover:cursor-pointer w-full rounded-md te hover:cursor-pointer text-lg focus:outline-primary text-navy/80 mt-1 ${
+                  signUpInfo.gender === "female"
+                    ? "bg-primary-400/10 border-primary-400/80 border-2 text-primary-600"
+                    : "bg-border/30 border-transparent border-2"
+                }`}
+                onClick={() =>
+                  setSignUpInfo({ ...signUpInfo, gender: "female" })
+                }
+              >
+                Female
+              </div>
             </div>
           </div>
 

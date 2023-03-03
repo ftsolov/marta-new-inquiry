@@ -6,7 +6,7 @@ const StatusBar = ({ currentQuestion, setCurrentQuestion }) => {
   };
 
   return (
-    <div className={"w-full flex-row flex gap-8 mt-2 mb-6"}>
+    <div className={"w-full flex-row flex gap-8 mt-2 mb-4"}>
       {currentQuestion > 1 && (
         <button
           onClick={handleBackClick}
